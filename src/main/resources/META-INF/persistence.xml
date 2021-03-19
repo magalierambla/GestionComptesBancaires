@@ -2,15 +2,18 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>streaming.entity.Film</class>
-    <class>streaming.entity.Genre</class>
+    <class>com.gestibank.entity.Utilisateur</class>
+    <class>com.gestibank.entity.Agent</class>
+    <class>com.gestibank.entity.Client</class>
+    <class>com.gestibank.entity.Administrateur</class>
+    <class>com.gestibank.entity.Compte</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/streaming"/>
-      <property name="javax.persistence.jdbc.user" value="streaming"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/gestibank"/>
+      <property name="javax.persistence.jdbc.user" value="gestibank"/>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
-      <property name="javax.persistence.jdbc.password" value="streaming"/>
-      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      <property name="javax.persistence.jdbc.password" value="gestibank"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>
   </persistence-unit>
 </persistence>
