@@ -7,6 +7,9 @@
     <class>com.gestibank.entity.Client</class>
     <class>com.gestibank.entity.Administrateur</class>
     <class>com.gestibank.entity.Compte</class>
+    <class>com.gestibank.entity.CompteRemunere</class>
+    <class>com.gestibank.entity.CompteCourant</class>
+    <class>com.gestibank.entity.DemandeChequier</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/gestibank"/>

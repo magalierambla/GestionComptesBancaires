@@ -10,39 +10,23 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 /**
  *
  * @author quico
  */
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public class Compte implements Serializable {
+public class CompteCourant extends Compte {
 
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    protected Long id;
-
-    protected String iban;
-            
-    protected Double solde;
+    private Double decouvert;
+    private Double entreeMoyenneMensuelle;
+    private Double montantInteret;
+    private Integer nbJoursDecouvert;
+    private Double plafondDecouvert;
     
-    @ManyToOne
-    @JoinColumn
-    protected Client client;
+    @OneToMany
+    private DemandeChequier demandeChequier;
     
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     @Override
     public int hashCode() {
@@ -54,10 +38,10 @@ public class Compte implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Compte)) {
+        if (!(object instanceof CompteCourant)) {
             return false;
         }
-        Compte other = (Compte) object;
+        CompteCourant other = (CompteCourant) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -66,7 +50,7 @@ public class Compte implements Serializable {
 
     @Override
     public String toString() {
-        return "com.gestibank.entity.Compte[ id=" + id + " ]";
+        return "com.gestibank.entity.CompteCourant[ id=" + id + " ]";
     }
     
 }

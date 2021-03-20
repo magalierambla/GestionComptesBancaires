@@ -6,35 +6,41 @@
 package com.gestibank.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
  * @author quico
  */
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public class Compte implements Serializable {
+public class DemandeChequier implements Serializable {
 
+    public enum Etat{ 
+        EN_ATTENTE, ACCEPTEE, REFUSEE
+    }
+    
+   
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    protected Long id;
-
-    protected String iban;
-            
-    protected Double solde;
+    private Long id;
     
-    @ManyToOne
-    @JoinColumn
-    protected Client client;
+    @Enumerated(EnumType.STRING)
+    private Etat etat;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateTimeDemande;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateTimeTraitement;
     
     public Long getId() {
         return id;
@@ -54,10 +60,10 @@ public class Compte implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Compte)) {
+        if (!(object instanceof DemandeChequier)) {
             return false;
         }
-        Compte other = (Compte) object;
+        DemandeChequier other = (DemandeChequier) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -66,7 +72,7 @@ public class Compte implements Serializable {
 
     @Override
     public String toString() {
-        return "com.gestibank.entity.Compte[ id=" + id + " ]";
+        return "com.gestibank.entity.DemandeChequier[ id=" + id + " ]";
     }
     
 }
