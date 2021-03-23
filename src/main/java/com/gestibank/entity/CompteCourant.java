@@ -24,8 +24,8 @@ public class CompteCourant extends Compte {
     private Integer nbJoursDecouvert;
     private Double plafondDecouvert;
     
-    @OneToMany
-    private DemandeChequier demandeChequier;
+//    @OneToMany
+//    private DemandeChequier demandeChequier;
     
 
     @Override
