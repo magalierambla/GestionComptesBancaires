@@ -57,6 +57,9 @@ public class Client extends Utilisateur {
 
     @OneToMany(mappedBy = "client")
     private List<Compte> comptes = new ArrayList<>();
+    
+    @OneToMany(mappedBy = "client")
+    private List<DemandeChequier> demandesChequier = new ArrayList<>();
 
     @Override
     public int hashCode() {
@@ -76,6 +79,62 @@ public class Client extends Utilisateur {
             return false;
         }
         return true;
+    }
+
+    public SituationMatrimoniale getSituationMatrimoniale() {
+        return situationMatrimoniale;
+    }
+
+    public void setSituationMatrimoniale(SituationMatrimoniale situationMatrimoniale) {
+        this.situationMatrimoniale = situationMatrimoniale;
+    }
+
+    public Date getDateNaissance() {
+        return dateNaissance;
+    }
+
+    public void setDateNaissance(Date dateNaissance) {
+        this.dateNaissance = dateNaissance;
+    }
+
+    public Date getDateHeureCreation() {
+        return dateHeureCreation;
+    }
+
+    public void setDateHeureCreation(Date dateHeureCreation) {
+        this.dateHeureCreation = dateHeureCreation;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public Agent getAgent() {
+        return agent;
+    }
+
+    public void setAgent(Agent agent) {
+        this.agent = agent;
+    }
+
+    public List<Compte> getComptes() {
+        return comptes;
+    }
+
+    public void setComptes(List<Compte> comptes) {
+        this.comptes = comptes;
+    }
+
+    public List<DemandeChequier> getDemandesChequier() {
+        return demandesChequier;
+    }
+
+    public void setDemandesChequier(List<DemandeChequier> demandesChequier) {
+        this.demandesChequier = demandesChequier;
     }
 
     @Override

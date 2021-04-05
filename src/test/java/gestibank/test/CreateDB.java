@@ -31,11 +31,11 @@ public class CreateDB {
         
         EntityManager em = Persistence.createEntityManagerFactory("PU").createEntityManager();
         
-        Client c = new Client();
-        em.getTransaction().begin();
-        em.persist(c);
-        em.flush();
-        em.getTransaction().commit();
+//        Client c = new Client();
+//        em.getTransaction().begin();
+//        em.persist(c);
+//        em.flush();
+//        em.getTransaction().commit();
             
     }    
 }

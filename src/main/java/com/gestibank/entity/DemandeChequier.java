@@ -13,6 +13,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -30,17 +32,53 @@ public class DemandeChequier implements Serializable {
    
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @Enumerated(EnumType.STRING)
     private Etat etat;
+    
+    @ManyToOne
+    @JoinColumn
+    private Client client;
     
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateTimeDemande;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateTimeTraitement;
+
+    public Etat getEtat() {
+        return etat;
+    }
+
+    public void setEtat(Etat etat) {
+        this.etat = etat;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Date getDateTimeDemande() {
+        return dateTimeDemande;
+    }
+
+    public void setDateTimeDemande(Date dateTimeDemande) {
+        this.dateTimeDemande = dateTimeDemande;
+    }
+
+    public Date getDateTimeTraitement() {
+        return dateTimeTraitement;
+    }
+
+    public void setDateTimeTraitement(Date dateTimeTraitement) {
+        this.dateTimeTraitement = dateTimeTraitement;
+    }
     
     public Long getId() {
         return id;
