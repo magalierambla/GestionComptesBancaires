@@ -28,7 +28,7 @@ public class JPATest {
      * Créer un client Thomas, avec un compte courant solde 5€
      */
 
-    @Test
+    //@Test
     public void remplir() {
         EntityManager em = Persistence.createEntityManagerFactory("PU").createEntityManager();        
         em.getTransaction().begin();
@@ -59,7 +59,7 @@ public class JPATest {
         em.getTransaction().commit();
     }
     
-//    @Test
+//    //@Test
     public void supprimOK(){
         EntityManager em = Persistence.createEntityManagerFactory("PU").createEntityManager();
         Compte c = em.find(Compte.class, 1L);
@@ -93,7 +93,7 @@ public class JPATest {
         em.getTransaction().commit();
     }
     
-//    @Test
+//    //@Test
     public void testMergeCompteId1OK() {
         
         System.out.println("testMergeCompteId1OK");
@@ -108,7 +108,7 @@ public class JPATest {
                
     }
     
-//    @Test
+//    //@Test
     public void testUpdateCompteId1OK() {
         System.out.println("testUpdateCompteId1OK");
        EntityManager em = Persistence.createEntityManagerFactory("PU").createEntityManager();
@@ -120,7 +120,7 @@ public class JPATest {
        em.getTransaction().commit();
     }
     
-//    @Test
+//    //@Test
     public void testPersistCompteOK() {
         System.out.println("testPersistCompteOK");
         CompteCourant cc = new CompteCourant();
@@ -132,7 +132,7 @@ public class JPATest {
         em.getTransaction().commit();
     }
     
-//    @Test
+//    //@Test
     public void testFindCompteId1NotNullOK(){
         System.out.println("testFindCompteId1NotNullOK");
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("PU");

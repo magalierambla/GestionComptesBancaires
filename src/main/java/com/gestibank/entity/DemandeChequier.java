@@ -26,7 +26,7 @@ import javax.persistence.TemporalType;
 public class DemandeChequier implements Serializable {
 
     public enum Etat{ 
-        EN_ATTENTE, ACCEPTEE, REFUSEE
+        EN_ATTENTE, ACCEPTEE, REFUSEE, ENVOYEE
     }
     
    

@@ -26,7 +26,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class CreateDB {
     
     
-    @Test
+    //@Test
     public void creer(){
         
         EntityManager em = Persistence.createEntityManagerFactory("PU").createEntityManager();

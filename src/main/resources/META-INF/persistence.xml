@@ -10,13 +10,13 @@
     <class>com.gestibank.entity.CompteRemunere</class>
     <class>com.gestibank.entity.CompteCourant</class>
     <class>com.gestibank.entity.DemandeChequier</class>
+    <class>com.gestibank.entity.DemandeAffectation</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/gestibank"/>
       <property name="javax.persistence.jdbc.user" value="gestibank"/>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
       <property name="javax.persistence.jdbc.password" value="gestibank"/>
-      <property name="javax.persistence.schema-generation.database.action" value="none"/>
     </properties>
   </persistence-unit>
 </persistence>

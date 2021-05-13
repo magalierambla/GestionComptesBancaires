@@ -6,6 +6,7 @@
 package com.gestibank.entity;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,6 +27,7 @@ public class Utilisateur implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
 
+    @Column(unique = true)
     protected String pseudo;
     
     protected String mdp;       
@@ -34,6 +36,7 @@ public class Utilisateur implements Serializable {
     
     protected String prenom;
     
+    @Column(unique = true)
     protected String mail;
 
     public String getPseudo() {
